@@ -4,6 +4,7 @@ import Search from "./components/Search";
 import Spinner from "./components/Spinner";
 import MovieCard from "./components/MovieCard";
 import { useDebounce } from "react-use";
+import TrendingMovies from "./components/TrendingMovies";
 
 const API_BASE_URL = "https://api.themoviedb.org/3";
 const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
@@ -19,7 +20,7 @@ function App() {
   const [searchTerm, setSearchTerm] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [movieList, setMovieList] = useState([]);
-  const [trendingmovies, setTrendingMovies] = useState([]);
+  const [trendingMovies, setTrendingMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [debouncedSearchTerm, setDebouncedSearchTerm] = useState("");
 
@@ -100,25 +101,11 @@ function App() {
           <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
         </header>
 
-        {trendingmovies.length > 0 && (
+        {trendingMovies.length > 0 && (
           <section className="trending">
             <h2>Trending Movies on TMDB</h2>
 
-            <ul>
-              {trendingmovies.map((movie, index) => (
-                <li key={movie.id}>
-                  <p>{index + 1}</p>
-                  <img
-                    src={
-                      movie.poster_path
-                        ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}`
-                        : "./no-movie.png"
-                    }
-                    alt={movie.title}
-                  />
-                </li>
-              ))}
-            </ul>
+            <TrendingMovies trendingMovies={trendingMovies} />
           </section>
         )}
 
