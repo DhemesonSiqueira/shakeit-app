@@ -3,8 +3,8 @@ import { useState, useEffect } from "react";
 import Search from "./components/Search";
 import Spinner from "./components/Spinner";
 import MovieCard from "./components/MovieCard";
-import { useDebounce } from "react-use";
 import TrendingMovies from "./components/TrendingMovies";
+import { useDebounce } from "./hooks/useDebounce";
 
 const API_BASE_URL = "https://api.themoviedb.org/3";
 const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
@@ -22,9 +22,8 @@ function App() {
   const [movieList, setMovieList] = useState([]);
   const [trendingMovies, setTrendingMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [debouncedSearchTerm, setDebouncedSearchTerm] = useState("");
 
-  useDebounce(() => setDebouncedSearchTerm(searchTerm), 500, [searchTerm]);
+  const debouncedSearchTerm = useDebounce(searchTerm, 600);
 
   async function fetchMovies(query = "") {
     setIsLoading(true);
