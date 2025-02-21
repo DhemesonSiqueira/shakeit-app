@@ -6,25 +6,22 @@
 @theme {
   --color-primary: #030014;
 
-  --color-light-100: #cecefb;
-  --color-light-200: #a8b5db;
+  --color-light-100: #E9C46A;
+  --color-light-200: #F4A261;
 
   --color-gray-100: #9ca4ab;
-
-  --color-dark-100: #0f0d23;
 
   --font-dm-sans: DM Sans, sans-serif;
 
   --breakpoint-xs: 480px;
-
-  --background-image-hero-pattern: url("/hero-bg.png");
 }
 
 @layer base {
   body {
     font-family: "DM Sans", serif;
     font-optical-sizing: auto;
-    background: #030014;
+    background: url("/blur-bg-m.jpg");
+    background-size: contain;
   }
 
   h1 {
@@ -32,11 +29,11 @@
   }
 
   h2 {
-    @apply text-2xl font-bold text-white sm:text-3xl;
+    @apply text-2xl font-bold text-light-100 sm:text-3xl;
   }
 
   main {
-    @apply min-h-screen relative bg-primary;
+    @apply backdrop-filter backdrop-blur-lg;
   }
 
   header {
@@ -50,11 +47,15 @@
 
 @layer components {
   .pattern {
-    @apply bg-hero-pattern w-full h-screen bg-center bg-cover absolute z-0;
+    @apply w-full h-screen bg-center bg-cover absolute z-0;
   }
 
   .wrapper {
-    @apply px-5 py-12 xs:p-10 max-w-7xl mx-auto flex flex-col relative z-10;
+    @apply xs:p-10 max-w-7xl mx-auto flex flex-col relative z-10;
+
+    & img {
+      @apply w-40;
+    }
   }
 
   .trending {
@@ -69,7 +70,7 @@
     }
 
     & ul li p {
-      @apply fancy-text mt-[22px] text-nowrap;
+      @apply fancy-text text-transparent mt-[22px] text-nowrap;
     }
 
     & ul li img {
@@ -78,7 +79,7 @@
   }
 
   .search {
-    @apply w-full bg-light-100/5 px-4 py-3 rounded-lg mt-10 max-w-3xl mx-auto;
+    @apply w-full bg-white/10 px-4 py-3 rounded-lg mt-10 max-w-3xl mx-auto;
 
     & div {
       @apply relative flex items-center;
@@ -89,7 +90,7 @@
     }
 
     & input {
-      @apply w-full bg-transparent py-2 sm:pr-10 pl-10 text-base text-gray-200 placeholder-light-200 outline-hidden;
+      @apply w-full bg-transparent py-2 sm:pr-10 pl-10 text-base text-white placeholder-white/50 outline-hidden;
     }
   }
 
@@ -102,7 +103,7 @@
   }
 
   .movie-card {
-    @apply bg-dark-100 p-5 rounded-2xl shadow-inner shadow-light-100/10;
+    @apply bg-white/10 backdrop-filter backdrop-blur-lg p-5 rounded-2xl shadow-inner shadow-black/10;
 
     & img {
       @apply rounded-lg h-auto w-full;
@@ -129,25 +130,25 @@
     }
 
     & .content span {
-      @apply text-sm text-gray-100;
+      @apply text-sm text-white;
     }
 
     & .content .lang {
-      @apply capitalize text-gray-100 font-medium text-base;
+      @apply capitalize text-white font-medium text-base;
     }
 
     & .content .year {
-      @apply text-gray-100 font-medium text-base;
+      @apply text-white font-medium text-base;
     }
   }
 }
 
 @utility text-gradient {
-  @apply bg-linear-to-r from-[#D6C7FF] to-[#AB8BFF] bg-clip-text text-transparent;
+  @apply bg-linear-to-r from-[#f7d581] to-[#F4A261] bg-clip-text text-transparent;
 }
 
 @utility fancy-text {
-  -webkit-text-stroke: 5px rgba(206, 206, 251, 0.5);
+  -webkit-text-stroke: 5px #fff;
   font-size: 190px;
   font-family: "Bebas Neue", sans-serif;
 }

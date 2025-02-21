@@ -4,6 +4,7 @@ import Search from "./components/Search";
 import Spinner from "./components/Spinner";
 import MovieCard from "./components/MovieCard";
 import TrendingMovies from "./components/TrendingMovies";
+
 import { useDebounce } from "./hooks/useDebounce";
 
 const API_BASE_URL = "https://api.themoviedb.org/3";
@@ -91,10 +92,9 @@ function App() {
 
       <div className="wrapper">
         <header>
-          <img src="./hero.png" alt="Hero Banner" />
+          <img src="./logo-shakeit.png" alt="Hero Banner" />
           <h1>
-            Find <span className="text-gradient">Movies</span> You'll Enjoy
-            Without Hassle
+          <span className="text-gradient">Shake it!</span> Mix, explore, and enjoy incredible drinks.
           </h1>
 
           <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
@@ -102,14 +102,14 @@ function App() {
 
         {trendingMovies.length > 0 && (
           <section className="trending">
-            <h2>Trending Movies on TMDB</h2>
+            <h2>Trending Drinks</h2>
 
             <TrendingMovies trendingMovies={trendingMovies} />
           </section>
         )}
 
         <section className="all-movies">
-          <h2>All Movies</h2>
+          <h2>All Drinks</h2>
 
           {isLoading ? (
             <Spinner />
