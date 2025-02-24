@@ -13,7 +13,7 @@ const database = new Databases(client);
 export async function updateSearchCount (searchTerm, drink) {
   try {
     const result = await database.listDocuments(DATABASE_ID, COLLECTION_ID, [
-      Query.equal('searchTerm', searchTerm),
+      Query.equal('drink_name', drink.strDrink),
     ]);
 
     if (result.documents.length > 0) {
@@ -28,6 +28,7 @@ export async function updateSearchCount (searchTerm, drink) {
         count: 1,
         drink_id: Number(drink.idDrink),
         poster_url: drink.strDrinkThumb,
+        drink_name: drink.strDrink,
       });
     }
   } catch (error) {

@@ -12,7 +12,7 @@ function TrendingDrinks({ trendingDrinks }) {
             }
             alt={drink.searchTerm}
           />
-          <span>{drink.searchTerm[0].toUpperCase() + drink.searchTerm.substring(1)}</span>
+          <span>{drink.drink_name}</span>
         </li>
       ))}
     </ul>
