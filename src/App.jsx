@@ -6,7 +6,7 @@ import DrinkCard from "./components/DrinkCard";
 import TrendingDrinks from "./components/TrendingDrinks";
 
 import { useDebounce } from "./hooks/useDebounce";
-import { getTrendingDrinks, updateSearchCount } from "./appwrite";
+import { getTrendingDrinks, updateSearchCount } from "./services/appwrite";
 
 const API_BASE_URL = "https://www.thecocktaildb.com";
 const API_OPTIONS = {
