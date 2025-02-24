@@ -10,7 +10,7 @@ const client = new Client()
 
 const database = new Databases(client);
 
-export async function updateSearchCount (searchTerm, drink) {
+export async function updateSearchCount (drink) {
   try {
     const result = await database.listDocuments(DATABASE_ID, COLLECTION_ID, [
       Query.equal('drink_name', drink.strDrink),
@@ -24,7 +24,6 @@ export async function updateSearchCount (searchTerm, drink) {
       });
     } else {
       await database.createDocument(DATABASE_ID, COLLECTION_ID, ID.unique(), {
-        searchTerm,
         count: 1,
         drink_id: Number(drink.idDrink),
         poster_url: drink.strDrinkThumb,

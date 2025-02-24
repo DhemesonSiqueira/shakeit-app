@@ -35,10 +35,17 @@ function App() {
 
       const data = await response.json();
 
+      if (data.drinks === null) {
+        console.log('no drinks');
+        setErrorMessage(`No results found for "${query}".`);
+        setDrinkList([]);
+        return;
+      }
+
       setDrinkList(data.drinks);
       
       if (query && data.drinks.length > 0) {
-        await updateSearchCount(query, data.drinks[0]);
+        await updateSearchCount(data.drinks[0]);
       }
     } catch (error) {
       console.error(`Error fetching drinks: ${error}`);
