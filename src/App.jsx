@@ -36,7 +36,6 @@ function App() {
       const data = await response.json();
 
       if (data.drinks === null) {
-        console.log('no drinks');
         setErrorMessage(`No results found for "${query}".`);
         setDrinkList([]);
         return;
