@@ -33,7 +33,7 @@
   }
 
   main {
-    @apply backdrop-filter backdrop-blur-lg;
+    @apply backdrop-filter backdrop-blur-lg relative;
   }
 
   header {
@@ -59,14 +59,14 @@
   }
 
   .trending {
-    @apply mt-20;
+    @apply mt-10;
 
     & ul {
       @apply flex flex-row overflow-y-auto gap-5 -mt-10 w-full hide-scrollbar;
     }
 
     & ul li {
-      @apply min-w-[230px] flex flex-row items-center;
+      @apply min-w-[230px] flex flex-row items-center relative;
     }
 
     & ul li p {
@@ -75,6 +75,10 @@
 
     & ul li img {
       @apply w-[127px] h-[163px] rounded-lg object-cover -ml-3.5;
+    }
+
+    & ul li span {
+      @apply text-white absolute bottom-18 left-15 bg-black/45 rounded-sm px-2 backdrop-filter backdrop-blur-lg;
     }
   }
 

@@ -1,4 +1,4 @@
-function DrinkCard({ drink: { strDrink: title, strDrinkThumb: image_path }}) {
+function DrinkCard({ drink: { strDrink: title, strDrinkThumb: image_path } }) {
   return (
     <li className="drink-card">
       <img src={`${image_path}/medium`}
