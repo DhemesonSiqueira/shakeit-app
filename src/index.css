@@ -4,12 +4,10 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #01333D;
+  --color-background: #01333D;
 
-  --color-light-100: #E9C46A;
-  --color-light-200: #F4A261;
-
-  --color-gray-100: #9ca4ab;
+  --color-primary: #F4A261;
+  --color-secondary: #E9C46A;
 
   --font-dm-sans: DM Sans, sans-serif;
 
@@ -29,7 +27,7 @@
   }
 
   h2 {
-    @apply text-2xl font-bold text-light-100 sm:text-3xl;
+    @apply text-2xl font-bold text-secondary sm:text-3xl;
   }
 
   main {
@@ -107,8 +105,7 @@
   }
 
   .drink-card {
-    @apply bg-white/10 backdrop-filter backdrop-blur-lg p-5 rounded-2xl shadow-inner shadow-black/10 cursor-pointer hover:scale-110 transition-all
-    ;
+    @apply bg-white/10 backdrop-filter backdrop-blur-lg p-5 rounded-2xl shadow-inner shadow-black/10 cursor-pointer hover:scale-105 transition-all hover:ring-1 ring-primary;
 
     & img {
       @apply rounded-lg h-auto w-full;
