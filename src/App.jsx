@@ -78,7 +78,7 @@ function App() {
 
       <div className="wrapper">
         <header>
-          <img src="./logo-shakeit.png" alt="Hero Banner" />
+          <img src="./shakeit-logo.png" alt="ShakeIt logo" />
           <h1>
             <span className="text-gradient">Shake it!</span> Mix, explore, and
             enjoy incredible drinks.

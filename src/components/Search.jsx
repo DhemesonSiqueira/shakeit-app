@@ -1,8 +1,10 @@
+import search from "../assets/search.svg";
+
 function Search ({searchTerm, setSearchTerm}) {
   return (
     <div className="search">
       <div>
-        <img src="./search.svg" alt="Search" />
+        <img src={search} alt="Search" />
 
         <input
           type="text"
