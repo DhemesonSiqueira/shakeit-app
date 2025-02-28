@@ -22,7 +22,7 @@
 
 ## 📜 <a name="about">About the Project</a>
 
-ShakeIt is a cocktail and drink exploration application built with React.js. It allows users to browse a variety of cocktail recipes, search for drinks by ingredients or name, and discover new flavors. The application fetches drink data from an API and provides an intuitive interface for easy navigation.
+ShakeIt is a cocktail and drink exploration application built with React.js. It allows users to browse a variety of cocktail recipes, search for drinks by name, and discover new flavors. The application fetches drink data from an API and provides an intuitive interface for easy navigation.
 
 A unique feature of ShakeIt is the Trending Drinks section, which tracks the most searched drink terms using Appwrite for data storage. This allows users to explore popular and trending cocktails in real-time, enhancing the discovery experience.
 
